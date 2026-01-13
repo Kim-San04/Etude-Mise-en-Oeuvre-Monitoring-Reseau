@@ -76,7 +76,7 @@ Ce projet démontre que Zabbix est une solution de référence capable de fourni
 
 ---
 ### 📂 Documents du Projet
-*   [📁 Rapport Complet (PDF)](./docs/Projet_Tutoré_Groupe11.pdf)
+*   [📁 Rapport Complet (PDF)](docs/Projet_Tutoré_Groupe11FINAL.pdf)
   
 ---
 **Analogie finale :**
