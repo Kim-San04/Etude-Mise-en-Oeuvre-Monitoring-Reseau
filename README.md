@@ -1,83 +1,115 @@
-# 📊 Étude et Mise en Œuvre d'Outils de Monitoring Réseau
-> **Projet Tutoré** : Analyse comparative et déploiement d'une solution de supervision proactive.
+<div align="center">
+
+![Header](https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:00f2ff&height=120&section=header&text=&fontSize=0)
+
+</div>
+
+# ð Ãtude et Mise en Åuvre d'Outils de Monitoring RÃ©seau
+
+<div align="center">
+
+![Zabbix](https://img.shields.io/badge/Zabbix-CC0000?style=for-the-badge&logo=zabbix&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white) ![SNMP](https://img.shields.io/badge/SNMP-Network_Monitoring-00b4d8?style=for-the-badge) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+![ESMT](https://img.shields.io/badge/ESMT_Dakar-Licence_ASR-purple?style=flat-square) ![Type](https://img.shields.io/badge/Type-Monitoring_&_Supervision-green?style=flat-square) ![Status](https://img.shields.io/badge/Status-Terminé-success?style=flat-square)
+
+</div>
+
+> **Projet TutorÃ©** : Analyse comparative et dÃ©ploiement d'une solution de supervision proactive.
 
 ---
 
-## 🎯 1. Introduction et Contexte
-Dans une infrastructure moderne, la supervision réseau est un pilier fondamental pour garantir la **stabilité**, la **performance** et la **sécurité** des systèmes. Ce projet s'inscrit dans le cadre de la formation en **Administration et Sécurité des Réseaux (ASR)** et répond à la problématique du choix et de la configuration d'outils adaptés pour une surveillance proactive.
+## ð¯ 1. Introduction et Contexte
+Dans une infrastructure moderne, la supervision rÃ©seau est un pilier fondamental pour garantir la **stabilitÃ©**, la **performance** et la **sÃ©curitÃ©** des systÃ¨mes. Ce projet s'inscrit dans le cadre de la formation en **Administration et SÃ©curitÃ© des RÃ©seaux (ASR)** et rÃ©pond Ã  la problÃ©matique du choix et de la configuration d'outils adaptÃ©s pour une surveillance proactive.
 
 ### Objectifs principaux :
 *   Comparer les solutions de monitoring (Open Source vs Commerciales).
-*   Déployer une solution capable de surveiller la disponibilité et d'anticiper les pannes.
-*   Mettre en place des alertes en temps réel et des tableaux de bord dynamiques.
+*   DÃ©ployer une solution capable de surveiller la disponibilitÃ© et d'anticiper les pannes.
+*   Mettre en place des alertes en temps rÃ©el et des tableaux de bord dynamiques.
 
 ---
 
-## ⚖️ 2. Étude Comparative des Solutions
-Sept outils majeurs ont été rigoureusement évalués selon des critères techniques, ergonomiques et économiques.
+## âï¸ 2. Ãtude Comparative des Solutions
+Sept outils majeurs ont Ã©tÃ© rigoureusement Ã©valuÃ©s selon des critÃ¨res techniques, ergonomiques et Ã©conomiques.
 
-| Critères | **Zabbix** | **Nagios** | **Centreon** | **PRTG (Free)** |
+| CritÃ¨res | **Zabbix** | **Nagios** | **Centreon** | **PRTG (Free)** |
 | :--- | :--- | :--- | :--- | :--- |
-| **Interface** | Moderne, intuitive | Basique, vieillissante | Intuitive (français) | Très conviviale |
-| **Apprentissage** | Moyenne | Élevée (config manuelle) | Faible à moyenne | Faible (très rapide) |
-| **Fonctionnalités** | Très riches, tout-en-un | Essentielles via plugins | Riches (dépendant Nagios) | Riches (limité 100 capteurs) |
-| **Performance** | Excellente, scalable | Robuste | Bonne | Bonne (petits réseaux) |
-| **Coût** | **Gratuit, Open Source** | Gratuit | Gratuit (édition de base) | Version complète payante |
+| **Interface** | Moderne, intuitive | Basique, vieillissante | Intuitive (franÃ§ais) | TrÃ¨s conviviale |
+| **Apprentissage** | Moyenne | ÃlevÃ©e (config manuelle) | Faible Ã  moyenne | Faible (trÃ¨s rapide) |
+| **FonctionnalitÃ©s** | TrÃ¨s riches, tout-en-un | Essentielles via plugins | Riches (dÃ©pendant Nagios) | Riches (limitÃ© 100 capteurs) |
+| **Performance** | Excellente, scalable | Robuste | Bonne | Bonne (petits rÃ©seaux) |
+| **CoÃ»t** | **Gratuit, Open Source** | Gratuit | Gratuit (Ã©dition de base) | Version complÃ¨te payante |
 
-> **🏆 Choix retenu : Zabbix.** Il se démarque par son interface moderne, sa scalabilité (architecture distribuée) et sa communauté très active.
+> **ð Choix retenu : Zabbix.** Il se dÃ©marque par son interface moderne, sa scalabilitÃ© (architecture distribuÃ©e) et sa communautÃ© trÃ¨s active.
 
 ---
 
-## ⚙️ 3. Zoom sur la Solution : Zabbix
-Zabbix est une plateforme centralisée permettant de surveiller en temps réel la disponibilité et l'intégrité des équipements.
+## âï¸ 3. Zoom sur la Solution : Zabbix
+Zabbix est une plateforme centralisÃ©e permettant de surveiller en temps rÃ©el la disponibilitÃ© et l'intÃ©gritÃ© des Ã©quipements.
 
 ### Architecture Technique :
-*   **Zabbix Server** : Le cœur du système qui traite les données et gère les alertes.
-*   **Zabbix Agent** : Installé sur les hôtes pour collecter les indicateurs locaux (CPU, RAM, Disque).
-*   **Zabbix Proxy** : Pour la supervision décentralisée sur des sites distants.
-*   **Base de Données** : Stockage des configurations et de l'historique (PostgreSQL utilisé ici).
+*   **Zabbix Server** : Le cÅur du systÃ¨me qui traite les donnÃ©es et gÃ¨re les alertes.
+*   **Zabbix Agent** : InstallÃ© sur les hÃ´tes pour collecter les indicateurs locaux (CPU, RAM, Disque).
+*   **Zabbix Proxy** : Pour la supervision dÃ©centralisÃ©e sur des sites distants.
+*   **Base de DonnÃ©es** : Stockage des configurations et de l'historique (PostgreSQL utilisÃ© ici).
 
 **Ports essentiels :** TCP 10050 (Agent) et TCP 10051 (Serveur/Proxy).
 
 ---
 
-## 🛠️ 4. Mise en Œuvre et Environnement de Test
-Le déploiement a été réalisé dans un environnement virtualisé sous **VMware Workstation**.
+## ð ï¸ 4. Mise en Åuvre et Environnement de Test
+Le dÃ©ploiement a Ã©tÃ© rÃ©alisÃ© dans un environnement virtualisÃ© sous **VMware Workstation**.
 
 ### Topologie du Laboratoire :
 *   **Serveur Zabbix** : Ubuntu 22.04 (IP: 192.168.81.132).
 *   **Client Ubuntu Server** : Supervision du service Apache et SSH.
-*   **Client Kali Linux** : Machine cliente supervisée.
+*   **Client Kali Linux** : Machine cliente supervisÃ©e.
 *   **Client Windows 10** : Supervision du service Spooler.
 
 ---
 
-## 🚀 5. Scénarios de Test et Alerting (Telegram)
-Pour assurer une réactivité maximale, nous avons intégré un **bot Telegram** pour la réception des alertes.
+## ð 5. ScÃ©narios de Test et Alerting (Telegram)
+Pour assurer une rÃ©activitÃ© maximale, nous avons intÃ©grÃ© un **bot Telegram** pour la rÃ©ception des alertes.
 
-### Simulations réalisées :
-1.  **Indisponibilité de Service** : L'arrêt d'Apache sur Ubuntu déclenche immédiatement un trigger et une notification Telegram.
-2.  **Saturation d'Espace Disque** : Création d'un fichier de 15 Go pour simuler un dépassement du seuil critique (80%).
-3.  **Panne Windows** : Détection de l'arrêt du service "Spooler" sur la VM Windows 10.
-
----
-
-## 📈 6. Visualisation (Dashboards)
-Le tableau de bord mis en place offre une vue synthétique incluant :
-*   **Current problems** : Suivi des alertes actives par sévérité.
-*   **Map** : Représentation visuelle de la topologie réseau en direct.
-*   **CPU Usage** : Graphique d'évolution temporelle comparatif.
-*   **Host Availability** : État global (Disponible / Indisponible).
+### Simulations rÃ©alisÃ©es :
+1.  **IndisponibilitÃ© de Service** : L'arrÃªt d'Apache sur Ubuntu dÃ©clenche immÃ©diatement un trigger et une notification Telegram.
+2.  **Saturation d'Espace Disque** : CrÃ©ation d'un fichier de 15 Go pour simuler un dÃ©passement du seuil critique (80%).
+3.  **Panne Windows** : DÃ©tection de l'arrÃªt du service "Spooler" sur la VM Windows 10.
 
 ---
 
-## 🏁 Conclusion
-Ce projet démontre que Zabbix est une solution de référence capable de fournir une supervision complète et proactive. L'implémentation a prouvé l'efficacité de l'outil pour collecter des données, analyser les performances et générer des alertes en temps réel, garantissant ainsi une haute disponibilité des infrastructures.
+## ð 6. Visualisation (Dashboards)
+Le tableau de bord mis en place offre une vue synthÃ©tique incluant :
+*   **Current problems** : Suivi des alertes actives par sÃ©vÃ©ritÃ©.
+*   **Map** : ReprÃ©sentation visuelle de la topologie rÃ©seau en direct.
+*   **CPU Usage** : Graphique d'Ã©volution temporelle comparatif.
+*   **Host Availability** : Ãtat global (Disponible / Indisponible).
 
 ---
-### 📂 Documents du Projet
-*   [📁 Rapport Complet (PDF)](docs/Projet_Tutoré_Groupe11FINAL.pdf)
+
+## ð Conclusion
+Ce projet dÃ©montre que Zabbix est une solution de rÃ©fÃ©rence capable de fournir une supervision complÃ¨te et proactive. L'implÃ©mentation a prouvÃ© l'efficacitÃ© de l'outil pour collecter des donnÃ©es, analyser les performances et gÃ©nÃ©rer des alertes en temps rÃ©el, garantissant ainsi une haute disponibilitÃ© des infrastructures.
+
+---
+### ð Documents du Projet
+*   [ð Rapport Complet (PDF)](docs/Projet_TutorÃ©_Groupe11FINAL.pdf)
   
 ---
 **Analogie finale :**
-Mettre en place Zabbix, c'est comme installer un **système de télésurveillance intelligent** dans un grand bâtiment. Les agents sont les caméras placées dans chaque pièce (serveurs), le serveur Zabbix est le poste de contrôle qui analyse les images, et le bot Telegram est le talkie-walkie qui prévient instantanément l'agent de sécurité dès qu'une porte est forcée ou qu'une fuite d'eau est détectée.
+Mettre en place Zabbix, c'est comme installer un **systÃ¨me de tÃ©lÃ©surveillance intelligent** dans un grand bÃ¢timent. Les agents sont les camÃ©ras placÃ©es dans chaque piÃ¨ce (serveurs), le serveur Zabbix est le poste de contrÃ´le qui analyse les images, et le bot Telegram est le talkie-walkie qui prÃ©vient instantanÃ©ment l'agent de sÃ©curitÃ© dÃ¨s qu'une porte est forcÃ©e ou qu'une fuite d'eau est dÃ©tectÃ©e.
+
+
+---
+
+<div align="center">
+
+### 🔗 Liens
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-00f2ff?style=for-the-badge&logo=firefox&logoColor=black)](https://kim-san04.github.io) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/hakim-sawadogo) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kim-San04)
+
+**Cheick Abdel Hadime Hakim SAWADOGO**
+*Mastère Cybersécurité, Réseaux & Cloud — Efrei Bordeaux*
+📧 cheick.sawadogo@efrei.net
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:00f2ff,100:0d1117&height=80&section=footer)
+
+</div>
